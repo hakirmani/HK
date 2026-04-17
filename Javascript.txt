@@ -1,0 +1,78 @@
+// ===== VARIABLES =====
+// These store information we can use later
+let userName = "Visitor";
+let clickCount = 0;
+
+// ===== FUNCTIONS =====
+// These are blocks of code we can run repeatedly
+
+// Function 1: Show a greeting message
+function showGreeting() {
+    alert("Thanks for visiting my website!");
+}
+
+// Function 2: Change the heading color
+function changeHeadingColor(color) {
+    let heading = document.querySelector('h1');
+    heading.style.color = color;
+}
+
+// Function 3: Count button clicks
+function countClicks() {
+    clickCount = clickCount + 1;
+    alert("You've clicked " + clickCount + " times!");
+}
+
+// Function 4: Change page background color
+function changeBackground(color) {
+    document.body.style.backgroundColor = color;
+}
+
+// Function 5: Show user input
+function greetUser() {
+    let userInput = prompt("What's your name?");
+    if (userInput !== null) {
+        alert("Hello, " + userInput + "! Welcome to my website!");
+    }
+}
+
+// ===== EVENTS =====
+// These run code when something happens
+
+// When the page loads, run this code
+window.addEventListener('load', function() {
+    console.log("Page has loaded!");
+    
+    // Change the heading color to blue when page loads
+    let heading = document.querySelector('h1');
+    heading.style.color = 'blue';
+    heading.style.fontSize = '36px';
+    
+    // Change the paragraph color to dark gray
+    let paragraph = document.querySelector('p');
+    paragraph.style.color = '#666';
+});
+
+// If you have a button with id="myButton", this will work
+let button = document.getElementById('myButton');
+if (button) {
+    button.addEventListener('click', function() {
+        alert("You clicked the button!");
+    });
+}
+
+// If you have a button with id="colorButton", this will work
+let colorButton = document.getElementById('colorButton');
+if (colorButton) {
+    colorButton.addEventListener('click', function() {
+        changeHeadingColor('red');
+    });
+}
+
+// If you have a button with id="backgroundButton", this will work
+let backgroundButton = document.getElementById('backgroundButton');
+if (backgroundButton) {
+    backgroundButton.addEventListener('click', function() {
+        changeBackground('#e0e0e0');
+    });
+} 
